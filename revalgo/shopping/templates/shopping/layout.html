@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}REVALGO{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <span class="menu-icon"><i class="fas fa-bars"></i></span>
+            <span class="logo">REVALGO</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Shop Now</a>
+            <a href="#" class="nav-link">Offers</a>
+            <a href="#" class="nav-link">Recommendations</a>
+            <a href="#" class="nav-link">My Carts</a>
+        </div>
+    </div>
+
+    <!-- Background image or gradient -->
+    <div class="background-image"></div>
+
+    <!-- Main content block -->
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block extra_body %}{% endblock %}
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

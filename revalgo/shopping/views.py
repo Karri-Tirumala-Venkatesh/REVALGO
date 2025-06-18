@@ -13,3 +13,6 @@ def index(request):
         HttpResponse: Rendered index page.
     """
     return render(request, 'shopping/index.html')
+
+def recommendations(request):
+    return render(request, 'shopping/recommendations.html')
