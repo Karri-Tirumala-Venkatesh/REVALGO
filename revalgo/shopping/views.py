@@ -13,7 +13,7 @@ from django.views.decorators.http import require_POST
 # It's crucial to load API keys from environment variables for security.
 # Never hardcode sensitive keys directly in your source code.
 # For production, consider using: GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-# GEMINI_API_KEY = "AIzaSyCtS4iPQqTutA6WzXpNg33cOphY4ipnPyo"
+# GEMINI_API_KEY = "KEY"
 
 
 # try:
