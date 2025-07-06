@@ -255,6 +255,9 @@ html, body {
     margin-top: 8px;
 }
 
+/* Add to your style.css */
+.search-voice-toggle i.fa-volume-mute { color: #aaa; }
+
 /* Responsive for mobile */
 @media (max-width: 900px) {
     .main-content, .chat-area, .search-bar { max-width: 98vw; }

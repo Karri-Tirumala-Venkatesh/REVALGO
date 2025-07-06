@@ -13,6 +13,13 @@
             <input type="file" id="attachment-input" style="display:none" multiple>
             <input class="search-input" type="text" placeholder="Shop now..." />
             <span class="search-mic" id="search-mic"><i class="fas fa-microphone"></i></span>
+            <span class="search-voice-toggle" id="voice-toggle" title="Toggle voice" style="padding:12px; color:#0052b4; font-size:22px; margin-left:8px; cursor:pointer;">
+                <i class="fas fa-volume-up"></i>
+            </span>
         </div>
     </div>
+
+    <script>
+        const CSRF_TOKEN = "{{ csrf_token }}";
+    </script>
 {% endblock %}
