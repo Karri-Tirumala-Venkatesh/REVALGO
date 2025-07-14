@@ -56,20 +56,31 @@ function sendMessage() {
     })
     .then(data => {
         // Typing effect for bot reply
-        const reply = data.reply;
+        let reply = data.reply;
+        // Convert Markdown images to HTML <img> tags
+        reply = reply.replace(
+            /!\[([^\]]*)\]\(([^)]+)\)/g,
+            '<img src="$2" alt="$1" style="max-width:320px;width:100%;border-radius:18px;display:block;margin:16px 0;">'
+        );
         let i = 0;
         let spoken = false;
         botMsg.innerHTML = `<div class="bubble bot" tabindex="-1"></div>`;
         const bubble = botMsg.querySelector('.bubble.bot');
         function typeChar() {
             if (i < reply.length) {
-                bubble.innerHTML += reply[i] === '\n' ? '<br>' : reply[i];
-                i++;
+                // If next part is an <img> tag, insert it as HTML
+                if (reply.slice(i).startsWith('<img')) {
+                    const imgEnd = reply.indexOf('>', i) + 1;
+                    bubble.innerHTML += reply.slice(i, imgEnd);
+                    i = imgEnd;
+                } else {
+                    bubble.innerHTML += reply[i] === '\n' ? '<br>' : reply[i];
+                    i++;
+                }
                 setTimeout(typeChar, 18 + Math.random() * 30);
                 chatArea.scrollTop = chatArea.scrollHeight;
             } else {
                 chatArea.scrollTop = chatArea.scrollHeight;
-                // Speak the reply after typing is done (or you can speak as it types)
                 if (!spoken) {
                     speakText(reply.replace(/<br>/g, '\n'));
                     spoken = true;
