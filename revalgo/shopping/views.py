@@ -153,44 +153,44 @@ def gemini_chat(request):
     # Using keywords for flexibility, but exact match can be enforced if needed.
     script = {
         0: (["hi!", "birthday present for my son"],
-            "Happy early birthday to your son! 🎉 I’d love to help you find the perfect gift. Could you tell me a bit about his interests? For example, does he like science, sports, art, or something else?",
+            "Happy early birthday to your son! 🎉🥳 I’d love to help you find the perfect gift. Could you tell me a bit about his interests? For example, does he like science, sports, art, or something else? 🤔",
             1),
         1: (["science experiments", "drawing", "playing outside"],
-            "That’s wonderful! Thank you for sharing. Do you have a budget in mind for the main gift?",
+            "That’s wonderful! 🧪🎨⚽ Thank you for sharing. Do you have a budget in mind for the main gift? 💸",
             2),
         2: (["₹3,000", "delivered by tomorrow"],
-            "Got it! birthday gift for a 10-year-old boy, science and art lover, outdoor play, budget ₹3,000, and urgent delivery. Would you like a single main gift, or are you interested in a gift bundle or maybe some return gifts for party guests as well?",
+            "Got it! birthday gift for a 10-year-old boy, science and art lover, outdoor play, budget ₹3,000, and urgent delivery.🚚⏰\n Would you like a single main gift, or are you interested in a gift bundle or maybe some return gifts for party guests as well? 🎁👫",
             3),
         3: (["main gift", "something small for the kids"],
-            "Perfect! Here are some main gift ideas that can be delivered by tomorrow:\n\n"
-            "1. DIY Volcano Science Kit – ₹1,499\n"
+            "Perfect! 👍 Here are some main gift ideas that can be delivered by tomorrow:\n\n"
+            "1. DIY Volcano Science Kit 🧪🌋 – ₹1,499\n"
             "   - Includes all materials for safe, fun experiments.\n\n"
-            "2. Personalized Art Supplies Set – ₹2,299\n"
+            "2. Personalized Art Supplies Set 🎨✏️ – ₹2,299\n"
             "   - Comes with his name printed on the case.\n\n"
-            "3. Outdoor Frisbee & Cricket Starter Kit – ₹2,899\n"
+            "3. Outdoor Frisbee & Cricket Starter Kit 🏏🥏 – ₹2,899\n"
             "   - For active play with friends.\n\n"
-            "Would you like more details or photos of any of these?",
+            "Would you like more details or photos of any of these? 📸",
             4),
         4: (["art supplies set", "volcano kit"],
-            "Here are the details:\n\nPersonalized Art Supplies Set\n![Art Supplies Set](/static/images/img2.jpg)\n- 48-piece set with markers, crayons, paints, and sketchbook\n- Durable carry case with your son’s name\n- Highly rated by parents (4.8/5 stars)\n- Next-day delivery available\n\nDIY Volcano Science Kit\n![Volcano Kit](/static/images/img1.png)\n- Safe, reusable kit for building and erupting a volcano\n- Includes colored powders, safety goggles, and instruction booklet\n- Great for hands-on learning\n- Next-day delivery available\n\nWould you like to add gift wrap or a birthday card for either of these?",
+            "Here are the details:\n\nPersonalized Art Supplies Set 🎨\n![Art Supplies Set](/static/images/img2.jpg)\n- 48-piece set with markers, crayons, paints, and sketchbook\n- Durable carry case with your son’s name 👜\n- Highly rated by parents (4.8/5 stars) ⭐⭐⭐⭐⭐\n- Next-day delivery available 🚚\n\nDIY Volcano Science Kit 🌋\n![Volcano Kit](/static/images/img1.png)\n- Safe, reusable kit for building and erupting a volcano\n- Includes colored powders, safety goggles, and instruction booklet 🥽📖\n- Great for hands-on learning\n- Next-day delivery available 🚚\n\nWould you like to add gift wrap or a birthday card for either of these? 🎁💌",
             5),
         5: (["gift wrap", "birthday card", "happy 10th birthday, aryan!"],
-            "Done! Gift wrap and a personalized birthday card have been added.\n\nNow, for return gifts, here are a few, under ₹200 each, available for next-day delivery:\n\n Mini Puzzle Cubes (set of 10) – ₹1,800\n![Mini Puzzle Cubes](/static/images/img1.png)\n\n DIY Slime Kits (set of 8) – ₹1,600\n![DIY Slime Kits](/static/images/img2.jpg)\n\n Art Sticker Packs (set of 12) – ₹1,500\n![Art Sticker Packs](/static/images/img3.jpg)\n\nWould you like to add any of these for the party guests?",
+            "Done! ✅ Gift wrap 🎁 and a personalized birthday card 💌 have been added.\n\nNow, for return gifts, here are a few, under ₹200 each, available for next-day delivery:\n\n Mini Puzzle Cubes (set of 10) 🧩 – ₹1,800\n![Mini Puzzle Cubes](/static/images/img1.png)\n\n DIY Slime Kits (set of 8) 🧫 – ₹1,600\n![DIY Slime Kits](/static/images/img2.jpg)\n\n Art Sticker Packs (set of 12) 🖼️ – ₹1,500\n![Art Sticker Packs](/static/images/img3.jpg)\n\nWould you like to add any of these for the party guests?",
             6),
         6: (["mini puzzle cubes"],
-            "Great choice! Mini Puzzle Cubes set of 10 added to your cart.\n\nHere’s a summary of your order:\n Personalized Art Supplies Set – ₹2,299\n Gift wrap & personalized card – ₹150\n Mini Puzzle Cubes (10) – ₹1,800\nTotal: ₹4,249\n\nYou qualify for a 10% COMBO discount, and everything will be delivered by tomorrow. Would you like to proceed to checkout?",
+            "Great choice! 👍 Mini Puzzle Cubes set of 10 🧩 added to your cart.\n\nHere’s a summary of your order:\n Personalized Art Supplies Set – ₹2,299 🎨\n Gift wrap & personalized card – ₹150 🎁💌\n Mini Puzzle Cubes (10) – ₹1,800 🧩\nTotal: ₹4,249\n\nYou qualify for a 10% BUNDLE discount 🏷️, and everything will be delivered by tomorrow. 🚚 Would you like to proceed to checkout? 🛒",
             7),
         7: (["yes"],
-            "All set! Please confirm your delivery address and choose your payment method to complete the order.",
+            "All set! ✅ Please confirm your delivery address 📍 and choose your payment method 💳 to complete the order.",
             8),
         8: (["address is the same as last time", "pay by card"],
-            "Thank you! Your order is confirmed. You’ll receive a tracking link and delivery updates shortly.\nWould you like a reminder for Aryan’s birthday next year, or any help with party decorations?",
+            "Thank you! 🙏 Your order is confirmed. 🎉 You’ll receive a tracking link and delivery updates shortly. 📦\nWould you like a reminder for Aryan’s birthday next year, or any help with party decorations? 🎈",
             9),
         9: (["reminder for next year", "decoration ideas"],
-            "You got it! I’ll remind you a month before Aryan’s next birthday.\n\nHere are some easy party decoration kits under ₹500, all available for fast delivery:\nBalloon Garland Kit\n- “Happy Birthday” Banner Set\n- Tableware & Confetti Pack\n\nWould you like to add any of these?",
+            "You got it! 👍 I’ll remind you a month before Aryan’s next birthday. 📅\n\nHere are some easy party decoration kits at ₹500, all available for fast delivery:\nBalloon Garland Kit 🎈\n- “Happy Birthday” Banner Set 🎉\n- Tableware & Confetti Pack 🍽️✨\n\nWould you like to add any of these?",
             10),
         10: (["banner set"],
-             "Banner set added. Thank you for shopping with us! Have a fantastic birthday celebration for Aryan! 🎂🎈",
+             "Banner set 🎉 added. Thank you for shopping with us! Have a fantastic birthday celebration for Aryan! 🎂🎈🥳",
              11) # End of script
     }
 
